@@ -32,4 +32,7 @@ public class News {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @Column(name = "category")
+    private String categoryName;
 }

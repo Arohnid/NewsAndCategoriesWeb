@@ -61,6 +61,7 @@ public class NewsCRUDService implements CRUDService<NewsDto> {
             if (categoryTitle.equals(list.get(i).getTitle())) {
                 Category category = categoryRepository.findById(list.get(i).getId()).orElseThrow();
                 news.setCategory(category);
+                news.setCategoryName(category.getTitle());
                 newsRepository.save(news);
                 break;
             }
